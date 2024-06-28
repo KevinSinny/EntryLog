@@ -1,13 +1,21 @@
 <LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#BBDBDE"
+
     android:gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    >
+    <ImageView
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:background="@drawable/fisatlogo"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="UserName:"
+        android:drawableLeft="@drawable/baseline_add_reaction_24"
         android:textSize="40px"
         android:textColor="#020202"/>
     <EditText
@@ -23,6 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Password"
         android:textSize="40px"
+        android:drawableLeft="@drawable/baseline_block_24"
         android:textColor="#0A0B0B"/>
     <EditText
         android:layout_width="match_parent"
@@ -40,5 +49,6 @@
         android:textColor="#000000"
         android:background="#EDDBA7"
         android:layout_margin="40dp"
+
         android:id="@+id/logbtn"/>
 </LinearLayout>
