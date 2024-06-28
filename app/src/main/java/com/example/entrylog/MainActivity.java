@@ -2,6 +2,7 @@ package com.example.entrylog;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +24,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        SharedPreferences pref=getSharedPreferences("Login",MODE_PRIVATE);
+        String username=pref.getString("user",null);
+        if(username!=null)
+            {
+                Intent i=new Intent(getApplicationContext(),LogEntry.class) ;
+                startActivity(i);
+            }
         e1=(EditText) findViewById(R.id.uname);
         e2=(EditText) findViewById(R.id.upass);
         b1=(AppCompatButton) findViewById(R.id.logbtn);
@@ -35,8 +43,12 @@ public class MainActivity extends AppCompatActivity {
                     String getpassword = e2.getText().toString();
                     if(getUsername.equals("admin") && getpassword.equals("12345"))
                         {
-                         Intent i=new Intent(getApplicationContext(),LogEntry.class) ;
-                         startActivity(i);
+                            SharedPreferences pref=getSharedPreferences("Login",MODE_PRIVATE);
+                            SharedPreferences.Editor editor=pref.edit();
+                            editor.putString("user","admin");
+                            editor.apply();
+                            Intent i=new Intent(getApplicationContext(),LogEntry.class) ;
+                            startActivity(i);
                         }
                     else
                     {
