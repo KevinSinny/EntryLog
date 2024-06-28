@@ -1,12 +1,44 @@
 <LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#6AC6D0"
+    android:background="#BBDBDE"
     android:gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="System No:"
+        android:text="UserName:"
+        android:textSize="40px"
+        android:textColor="#020202"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the username"
+        android:textColor="#070707"
+        android:textSize="40px"
+        android:inputType="text"
+        android:id="@+id/uname"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="40px"
         android:textColor="#0A0B0B"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the password"
+        android:textColor="#0C0D0D"
+        android:textSize="40px"
+        android:inputType="textPassword"
+        android:id="@+id/upass"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="30px"
+        android:textColor="#000000"
+        android:background="#EDDBA7"
+        android:layout_margin="40dp"
+        android:id="@+id/logbtn"/>
 </LinearLayout>
