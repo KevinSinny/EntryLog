@@ -30,13 +30,24 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
+                    String getUsername = e1.getText().toString();
+                    String getpassword = e2.getText().toString();
+                    if(getUsername.equals("admin") && getpassword.equals("12345"))
+                        {
+                         Intent i=new Intent(getApplicationContext(),LogEntry.class) ;
+                         startActivity(i);
+                        }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Username and Password does not ", Toast.LENGTH_SHORT).show();
+                    }
+                }
+               catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Enter both the inputs", Toast.LENGTH_SHORT).show();
+                }
 
-                String getUsername=e1.getText().toString();
-                String getpassword=e2.getText().toString();
-                Toast.makeText(getApplicationContext(),getUsername+" "+getpassword,Toast.LENGTH_SHORT).show();
-            }
-
-        });}}
+            } });}}
        /* b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
